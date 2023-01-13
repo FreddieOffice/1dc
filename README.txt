@@ -1,6 +1,9 @@
 this is an esoteric programming language written in lua 
 is alsow known as "N--".
 
+by the way lua53.dll is needed for ONE-C.exe
+also haha 1c and ONE-C
+
 functions:
 p <char>: will print the characters after the "p" with a new line (p = print (like you couldnt guess))
 pwn <char>: will print the characters after the "pwn" without a newline (pwn = Print Without Newline)
