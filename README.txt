@@ -1,7 +1,6 @@
 this is an esoteric programming language written in lua 
 is alsow known as "N--".
-
-by the way lua53.dll is needed for ONE-C.exe
+by the way lua53.dll is needed for ONE-C.exe and note that the interpreter is KIND OF BUGGY!!! (or its just my bad coding)
 also haha 1c and ONE-C
 
 functions:
