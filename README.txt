@@ -16,6 +16,6 @@ exec <char>: call a terminal command
 
 use:
 command prompt:
-    G#.exe <filename>.1dc or G# <filename>.1dc (if in path)
+    1dc.exe <filename>.1dc or 1dc <filename>.1dc (if in path)
 powershell:
-    G#.exe .\<filename>.1dc or G# .\<filename>.1dc (if in paht)
+    1dc.exe .\<filename>.1dc or 1dc .\<filename>.1dc (if in paht)
