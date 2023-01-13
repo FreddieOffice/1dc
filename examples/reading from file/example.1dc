@@ -1,0 +1,8 @@
+o catfish.txt catfish
+pv catfish
+
+w 3.5
+exec cls
+
+o maxwell.txt maxwell
+pv maxwell
