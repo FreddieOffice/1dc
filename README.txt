@@ -1,7 +1,6 @@
 this is an esoteric programming language written in lua 
-is alsow known as "N--".
-by the way lua53.dll is needed for ONE-C.exe and note that the interpreter is KIND OF BUGGY!!! (or its just my bad coding)
-also haha 1c and ONE-C
+old name was "ONE-C"
+note that the interpreter is KIND OF BUGGY!!! (or its just my bad coding)
 
 functions:
 p <char>: will print the characters after the "p" with a new line (p = print (like you couldnt guess))
@@ -17,8 +16,6 @@ exec <char>: call a terminal command
 
 use:
 command prompt:
-    lua ONE-C.lua <filename>.1dc
-    lua<luaversion> ONE-C.lua <filename>.1dc
+    G#.exe <filename>.1dc or G# <filename>.1dc (if in path)
 powershell:
-    lua .\ONE-C.lua .\<filename>.1dc
-    lua<luaversion> .\ONE-C.lua .\<filename>.1dc
+    G#.exe .\<filename>.1dc or G# .\<filename>.1dc (if in paht)
