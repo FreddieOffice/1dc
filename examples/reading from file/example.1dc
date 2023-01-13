@@ -1,8 +1,8 @@
-o catfish.txt catfish
+or catfish.txt = catfish
 pv catfish
 
 w 3.5
 exec cls
 
-o maxwell.txt maxwell
+or maxwell.txt = maxwell
 pv maxwell
