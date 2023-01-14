@@ -7,11 +7,11 @@ p <char>: will print the characters after the "p" with a new line (p = print (li
 pwn <char>: will print the characters after the "pwn" without a newline (pwn = Print Without Newline)
 pv <var>: will print a variable without a newline
 
-int <int> = <int>: set a number variable
+number <number> = <number>: set a number variable
 string <char> = <char>: set a string variable
 
 r <char>: will ask for input and then put the inputted text into the <char> (variable)
-w <int>: will wait for <int> seconds
+w <number>: will wait for <int> seconds
 or <char> = <char>: will open a file, read it, put its characters into a variable.
 ow <char> = <char>: will open a file, write to it whats in the second <char>.
 exec <char>: call a terminal command
