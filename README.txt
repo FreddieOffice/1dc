@@ -7,7 +7,8 @@ p <char>: will print the characters after the "p" with a new line (p = print (li
 pwn <char>: will print the characters after the "pwn" without a newline (pwn = Print Without Newline)
 pv <var>: will print a variable without a newline
 
-v <char> = <char>: set a variable
+int <int> = <int>: set a number variable
+string <char> = <char>: set a string variable
 
 r <char>: will ask for input and then put the inputted text into the <char> (variable)
 w <int>: will wait for <int> seconds
