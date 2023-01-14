@@ -42,24 +42,76 @@ function main()
                 local r = io.read()
                 vars[param] = r
             elseif func == "w" then
-                wait(param/2+param/2)
+                local is_var = false
+
+                if vars[param] then
+                    if type(vars[param]) == "string" then
+                        error "NOT A NUMBER"
+                    end
+                    is_var = true
+                    wait(vars[param]/2+vars[param]/2)
+                elseif is_var == false then
+                    wait(param/2+param/2)
+                end
             elseif func == "exec" then
-                os.execute(param)
+                local is_var = false
+
+                if vars[param] then
+                    is_var = true
+                    os.execute(vars[param])
+                elseif is_var == false then
+                    os.execute(param)
+                end
             end
         end
 
-        for filename_r, var in line:gmatch('or ([abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%d%p%s%z]+) = ([abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%d%p%s%z]+)') do
-            local f = io.open(filename_r, "r")
-            local data = f:read("*all")
-            f:close()
+        for filename_r, varname_r in line:gmatch('or ([abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%d%p%s%z]+) = ([abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%d%p%s%z]+)') do
+            local is_var = false
 
-            vars[var] = data
+            if vars[filename_r] then
+                is_var = true
+                local f = io.open(vars[filename_r], "r")
+                local data = f:read("*all")
+                f:close()
+
+                vars[varname_r] = data
+            elseif is_var == false then
+                local f = io.open(filename_r, "r")
+                local data = f:read("*all")
+                f:close()
+
+                vars[varname_r] = data
+            end
         end
 
         for filename_w, towrite in line:gmatch('ow ([abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%d%p%s%z]+) = ([abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ%d%p%s%z]+)') do
-            local f = io.open(filename_w, "w")
-            f:write(towrite)
-            f:close()
+            local filename_is_var = false
+            local towrite_is_var = false
+
+            if vars[filename_w] then
+                if vars[towrite] then
+                    towrite_is_var = true
+                    local f = io.open(vars[filename_w], "w")
+                    f:write(vars[towrite])
+                    f:close()
+                elseif towrite_is_var == false then
+                    filename_is_var = true
+                    local f = io.open(vars[filename_w], "w")
+                    f:write(towrite)
+                    f:close()
+                end
+            elseif filename_is_var == false then
+                if vars[towrite] then
+                    towrite_is_var = true
+                    local f = io.open(filename_w, "w")
+                    f:write(vars[towrite])
+                    f:close()
+                elseif towrite_is_var == false then
+                    local f = io.open(filename_w, "w")
+                    f:write(towrite)
+                    f:close()
+                end
+            end
         end
     end
 end
